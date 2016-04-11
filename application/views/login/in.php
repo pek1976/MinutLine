@@ -4,7 +4,7 @@ function validateForms()
 {
     myform = document.myform;
     if(myform.username.value == "" ||  myform.password.value == ""){
-        alert('Ingresa los datos del formulario!');
+        alert('Ingrese los datos del formulario!');
         myform.username.focus();
         return false;
     }

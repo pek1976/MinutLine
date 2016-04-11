@@ -82,8 +82,11 @@ class Rol extends CI_Controller {
 		$this->msg  = 'Rol Ingresado exitosamente';
 		$this->lista();
 	}
+        
+        
 	public function eliminar()
 	{
+            
 		$id = $this->params['id'];		
                 $this->db->query("delete from usuario where id=".$id);                
 		$this->isOk = $isOk;
