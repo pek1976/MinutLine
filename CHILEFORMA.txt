@@ -1,6 +1,0 @@
-controller-vista
-menus
-mantenedor completo
-exportar excel
-exportar pdf
-carga de helper y library
