@@ -1,6 +1,6 @@
 <?php
 
-class Usuario extends CI_Model {
+class UsuarioModel extends CI_Model {
 
     function __construct()
     {
@@ -8,7 +8,8 @@ class Usuario extends CI_Model {
         parent::__construct();
         //carga de libs
         $this->load->database();
-        $this->load->library('session');
+        $this->load->library('session');        
+        $this->params = $this->uri->uri_to_assoc();
     }
     
     function ifLogeado(){
@@ -42,7 +43,7 @@ class Usuario extends CI_Model {
 	if($rol == 1 ){ // Rol 
             
 		$menu['usuario/home']       = "Home";
-		$menu['usuario/cifras']     = "Usuarios";
+		$menu['usuario/lista']     = "Usuarios";
                 $menu['rol/lista']      = "Privilegios";
 		$menu['usuario/contenidos'] = "Plantilla";
 		$menu['usuario/datos']      = "Minuta";
@@ -58,4 +59,3 @@ class Usuario extends CI_Model {
             return $menu;
         }
 }
-php?>

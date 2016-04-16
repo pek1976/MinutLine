@@ -1,5 +1,4 @@
 
-<input type="button" value="Crear Rol" class="button-submit" onclick="window.location.href='<?php echo site_url('rol/crear')?>'"/> 
 
 <?php
 if($isOk === true){
@@ -19,8 +18,8 @@ if($isOk === true){
 	{
             echo '<tr class="odd">';
 	    echo '<td>'.$row->id.'</td>';
-	    echo '<td>'.$row->nombre.'</td>';
-	    echo '<td>';
+	    echo '<td>'.$row->nombre.'</td>';            
+            echo '<td>';
 	    echo '<a href="'.site_url('rol/editar/id/'.$row->id).'">Editar</a>';
 	    echo ' | ';
 	    echo '<a href="'.site_url('rol/eliminar/id/'.$row->id).'">Eliminar</a>';

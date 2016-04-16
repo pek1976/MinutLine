@@ -5,13 +5,13 @@ class Inicio extends CI_Controller {
 	public function index()
 	{
 		$this->load->helper(array('form', 'url'));
-		$this->load->model('Usuario');
+		$this->load->model('UsuarioModel');
                 //revisamos que este logado
 		
-        $this->Usuario->ifLogeado();
+        $this->UsuarioModel->ifLogeado();
 
 		$data = Array();	             
-                $data['menu'] = $this->Usuario->menu($this->session->userdata('rol'));
+                $data['menu'] = $this->UsuarioModel->menu($this->session->userdata('rol'));
 		$data['page'] = 'page/default';
 		$this->load->view('welcome_message', $data);
 	}
