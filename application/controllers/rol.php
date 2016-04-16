@@ -10,10 +10,10 @@ class Rol extends CI_Controller {
         $this->load->database();
         $this->params = $this->uri->uri_to_assoc();
         //cargamos el modelo con las funciones a utilizar
-        $this->load->model('Usuario');
+        $this->load->model('UsuarioModel');
         $this->load->helper(array('form', 'url'));
         //revisamos que este logado
-        $this->Usuario->ifLogeado();
+        $this->UsuarioModel->ifLogeado();
         //tenemos la sesion una vez verificado
         	             
                 
@@ -32,7 +32,7 @@ class Rol extends CI_Controller {
 			$data['isOk'] = $this->isOk;
 			$data['msg'] = $this->msg;	
 		}
-                $data['menu'] = $this->Usuario->menu($this->session->userdata('rol'));
+                $data['menu'] = $this->UsuarioModel->menu($this->session->userdata('rol'));
 		//$data['page'] = 'page/default';
 		$data['page'] = 'rol/lista';
 		$data['data'] = $query->result();
@@ -44,7 +44,7 @@ class Rol extends CI_Controller {
 		$query = $this->db->query("SELECT * FROM USUARIO where ID=".$id);
 		$row = $query->row_array(); 
 		$data = Array();
-                $data['menu'] = $this->Usuario->menu($this->session->userdata('rol'));
+                $data['menu'] = $this->UsuarioModel->menu($this->session->userdata('rol'));
 		$data['page'] = 'rol/editar';
 		$data['row'] =$row;
 		$this->load->view('welcome_message', $data);

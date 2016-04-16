@@ -21,7 +21,7 @@ class login  extends CI_Controller{
     
     public function procesarFormulario(){
         //cargamos el modelo
-        $this->load->model('Usuario');
+        $this->load->model('UsuarioModel');
         //libreria especial para el consumo y grabado de sesiones
         $this->load->library('session');
         //para usar redirect entre otras cosas
@@ -31,8 +31,8 @@ class login  extends CI_Controller{
         $pass = $this->input->post('password');
         
         //validamos que exista en la bd
-        $rol = $this->Usuario->ifExists($name, $pass);
-        if($this->Usuario->ifExists($name, $pass)){
+        $rol = $this->UsuarioModel->ifExists($name, $pass);
+        if($this->UsuarioModel->ifExists($name, $pass)){
             $this->session->set_userdata('user', $name);
             $this->session->set_userdata('rol', $rol);            
         }
